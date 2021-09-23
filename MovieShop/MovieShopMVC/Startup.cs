@@ -8,7 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.EntityFrameworkCore;
+using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Services;
+using Infrastructure.Data;
 namespace MovieShopMVC
 {
     public class Startup
@@ -23,7 +26,15 @@ namespace MovieShopMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // .NET Core has built-in DI support
+            // old .NET Framework did not have built-in dependency
+            // we used with 3rd party libraries, Autofax. Ninject
             services.AddControllersWithViews();
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddDbContext<MovieShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection")));
+            //AddScoped
+            //AddTransient
+            //AddSingleton
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

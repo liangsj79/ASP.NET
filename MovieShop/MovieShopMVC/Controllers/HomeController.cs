@@ -32,7 +32,7 @@ namespace MovieShopMVC.Controllers
             // i want to display top revenue movies
             // get model data
             var movieService = new MovieService();
-            var movies = movieService.Get30HighestiGrossingMovies();
+            var movies = movieService.Get30HighestGrossingMovies();
             // models.
             return View(movies);
         }

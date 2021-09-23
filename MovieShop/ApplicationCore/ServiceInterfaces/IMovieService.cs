@@ -6,6 +6,6 @@ namespace ApplicationCore.ServiceInterfaces
     //Models
     public interface IMovieService
     {
-        IEnumerable<MovieCardResponseModel> Get30HighestiGrossingMovies(); 
+        IEnumerable<MovieCardResponseModel> Get30HighestGrossingMovies(); 
     }
 }

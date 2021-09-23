@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\W\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {}
+    "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+    "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+        "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\obj\\",
+        "outputPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\W\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\W\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
+              "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
               }
             }
           }
@@ -97,6 +103,18 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -116,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\W\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {
+    "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\W\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+        "projectUniqueName": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
         "projectName": "MovieShopMVC",
-        "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
+        "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
         "packagesPath": "C:\\Users\\W\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\W\\source\\repos\\MovieShop\\MovieShopMVC\\obj\\",
+        "outputPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\W\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -140,11 +158,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
+              "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\W\\source\\repos\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -158,6 +176,18 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

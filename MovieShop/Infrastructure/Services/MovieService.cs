@@ -7,7 +7,9 @@ namespace Infrastructure.Services
 {
     public class MovieService : IMovieService
     {
-        public IEnumerable<MovieCardResponseModel> Get30HighestiGrossingMovies()
+      
+
+        public IEnumerable<MovieCardResponseModel> Get30HighestGrossingMovies()
         {
             var repo = new MovieRepository();
 

@@ -9,3 +9,15 @@ C:\Users\W\source\repos\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCo
 C:\Users\W\source\repos\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
 C:\Users\W\source\repos\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
 C:\Users\W\source\repos\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.deps.json
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\bin\Debug\net5.0\ref\ApplicationCore.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.pdb
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
