@@ -1,0 +1,148 @@
+﻿@model ApplicationCore.Models.MovieDetailModel
+
+<div class="container-fluid">
+    
+    <div class="card" >
+        <div class="container-fluid bg-dark" style="height: 600px;overflow: hidden; ">
+            <img src="@Model.BackdropUrl" class="img-fluid" alt="@Model.Title" />
+        </div>
+        
+        <div class="card-img-overlay" style="background: rgba(0, 0, 20, 0.7);">
+            <div class="row">
+                <div class="col-4">
+                    <img src="@Model.PosterUrl" class="img-fluid float-right" />
+                </div>
+                <div class="col-5">
+                    <div style="padding-left: 100px">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="text-light">@Model.Title</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="text-secondary">@Model.Tagline</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <p class="text-secondary font-weight-bold">@Model.RunTime.ToString() m | @Model.ReleaseYear</p>
+                            </div>
+                            <div class="col-8">
+                                @if (@Model.Genres != null)
+                                {
+                                    foreach (var genre in @Model.Genres)
+                                    {
+                                        <span class="badge rounded-pill bg-secondary text-light"><a asp-controller="Movies" asp-action="Genre" asp-route-id="@genre.Id" style="text-decoration: none;color: inherit">@genre.Name</a></span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="badge rounded-pill bg-light text-dark">No Genre</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col">
+                                @if (@Model.Rating != null)
+                                {
+                                    <h5><span class="badge bg-success text-light">@Model.Rating</span></h5>
+                                }
+                                else
+                                {
+                                    <h5><span class="badge bg-success text-light">No Rating</span></h5>
+                                }
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-light">@Model.Overview</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="row justify-content-end mt-5 mr-4 pt-5 pl-5" >
+                        <button type="button" class="btn btn-outline-light btn-block"><i class="far fa-edit"></i> Review</button>
+                    </div>
+                    <div class="row justify-content-end mt-4 mr-4 pl-5">
+                        <button type="button" class="btn btn-light float-right btn-block">BUY $@Model.Price</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row pt-3">
+        <div class="col-4 bg-light">
+            <div id="movieFacts">
+                <h6>MOVIE FACTS</h6>
+                <ul class="list-group list-group-flush mb-2">
+                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-calendar-alt"></i> Release Date <span class="badge badge-pill bg-dark text-light">@Model.ReleaseDate</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-hourglass-half"></i> Run Time <span class="badge badge-pill bg-dark text-light">@Model.RunTime m</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-money-bill-alt"></i> Box Office <span class="badge badge-pill bg-dark text-light">$@Model.Revenue</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-dollar-sign"></i> Budget <span class="badge badge-pill bg-dark text-light">$@Model.Budget</span></li>
+                </ul>
+                <span style="margin-left:20px;"><a href="@Model.ImdbUrl" style="color:inherit;"><i class="fab fa-imdb"></i></a></span>
+                <span style="margin-left:20px;" ><a href="#" style="color:inherit;"><i class="fas fa-share-square"></i></a></span>
+            </div>
+            <div id="trailers" class="pt-3">
+                <h6>TRAILERS</h6>
+                <ul class="list-group list-group-flush">
+                    @if (@Model.Trailers != null)
+                    {
+                        foreach (var trailer in @Model.Trailers)
+                        {
+                            <li class="list-group-item" style="background-color:inherit"><a href="@trailer.TrailerUrl" style="text-decoration:none;color:inherit;"><i class="fab fa-youtube"></i> @trailer.Name</a> </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item">No Trailer</li>
+                    }
+                </ul>
+            </div>
+            
+        </div>
+        <div class="col-5">
+            <div id="cast" style="padding-left: 100px">
+                <h6>CAST</h6>
+                <ul class="list-group list-group-flush">
+                    @if (@Model.Casts != null)
+                    {
+                        @foreach (var cast in @Model.Casts)
+                        {
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="@cast.ProfilePath" class="d-inline rounded-circle" width="45" height="65" />
+                                    </div>
+                                    <div class="col-5">
+                                        <span>@cast.Name</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <span>@cast.Character</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item">No Cast</li>
+                    }
+                </ul>
+            </div>
+            
+        </div>
+        <div class="col-3">
+
+        </div>
+
+    </div>
+</div>

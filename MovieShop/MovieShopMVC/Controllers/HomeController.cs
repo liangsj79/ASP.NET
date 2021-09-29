@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.ServiceInterfaces;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,11 +13,11 @@ namespace MovieShopMVC.Controllers
 {
     public class HomeController : Controller
     {
-       
+        private readonly IMovieService _movieService;
 
-        public HomeController()
+        public HomeController(IMovieService movieService)
         {
-            
+            _movieService = movieService;
         }
 
        
@@ -31,17 +32,13 @@ namespace MovieShopMVC.Controllers
             // as COntroller name and look for view with same name as action metjhod name 
             // i want to display top revenue movies
             // get model data
-            var movieService = new MovieService();
-            var movies = movieService.Get30HighestGrossingMovies();
+
             // models.
+            var movies = _movieService.Get30HighestGrossingMovies();
             return View(movies);
         }
 
 
-        public IActionResult Test()
-        {
-            return View();
-        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

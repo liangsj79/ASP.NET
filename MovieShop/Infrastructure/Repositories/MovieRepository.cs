@@ -1,19 +1,86 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.Entities;
+using Infrastructure.Data;
+using ApplicationCore.Models;
+
 namespace Infrastructure.Repositories
 {
-    class MovieRepository : IMovieRepository
+    public class MovieRepository : IMovieRepository
     {
+        private readonly MovieShopDbContext _movieShopDbContext;
+
+        public MovieRepository(MovieShopDbContext dbContext)
+        {
+            _movieShopDbContext = dbContext;
+        }
         public IEnumerable<Movie> Get30HighestGrossingMovies()
         {
-            var movies = new List<Movie> { new Movie { Id =1, Title="Inception", PosterUrl="https://image.tmdb.org/t/p/w342//9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg", Revenue=825532764},
-                new Movie { Id =2, Title="Interstellar", PosterUrl="https://image.tmdb.org/t/p/w342//gEU2QniE6E77NI6lCU6MxlNBvIx.jpg", Revenue=825532764},
-                new Movie { Id =3, Title="The Dark Knight", PosterUrl="https://image.tmdb.org/t/p/w342//qJ2tW6WMUDux911r6m7haRef0WH.jpg", Revenue=825532764},
-                new Movie { Id =4, Title="Deadpool", PosterUrl="https://image.tmdb.org/t/p/w342//yGSxMiF0cYuAiyuve5DA6bnWEOI.jpg", Revenue=825532764},
-                new Movie { Id =5, Title="The Avengers", PosterUrl="https://image.tmdb.org/t/p/w342//RYMX2wcKCBAr24UyPD7xwmjaTn.jpg", Revenue=825532764},
- };
+            var movies = _movieShopDbContext.Movies.OrderByDescending(m => m.Revenue).Take(30).ToList();
+            return movies;
+        }
+
+        public IEnumerable<Genre> GetAllGenres()
+        {
+            var genres = _movieShopDbContext.Genres.OrderBy(g => g.Name).ToList();
+            return genres;
+        }
+
+        
+
+        public Movie GetMovieById(int id)
+        {
+            var movie = _movieShopDbContext.Movies.Where(m => m.Id == id).SingleOrDefault();
+            return movie;
+        }
+        
+        
+        public decimal GetRatingByMovieId(int id)
+        {
+            decimal rating = 0.0m;
+            var reviews = _movieShopDbContext.Reviews.Where(r => r.MovieId == id).ToList();
+            if (reviews.Count() != 0)
+            {
+                rating = reviews.Average(r => r.Rating);
+            }
+
+            return rating;
+        }
+        public IEnumerable<CastResponseModel> GetCastsById(int id)
+        {
+            var casts = (from c in _movieShopDbContext.Casts
+                        join mc in _movieShopDbContext.MovieCasts
+                        on c.Id equals mc.CastId
+                        where mc.MovieId == id
+                        select new CastResponseModel{ Id= c.Id, Name=c.Name, ProfilePath =c.ProfilePath, Character =mc.Character }).ToList();
+            return casts;
+
+        }
+
+        public IEnumerable<Genre> GetGenresById(int id)
+        {
+            var genres = (from g in _movieShopDbContext.Genres
+                        join mg in _movieShopDbContext.MovieGenres
+                        on g.Id equals mg.GenreId
+                        where mg.MovieId == id
+                        select g).ToList();
+            return genres;
+        }
+        public IEnumerable<Trailer> GetTrailersById(int id)
+        {
+            var trailers = _movieShopDbContext.Trailers.Where(t => t.MovieId == id).ToList();
+            return trailers;
+        }
+
+        public IEnumerable<Movie> GetMoviesByGenreId(int id)
+        {
+            var movies = (from m in _movieShopDbContext.Movies
+                          join mg in _movieShopDbContext.MovieGenres
+                          on m.Id equals mg.MovieId
+                          where mg.GenreId == id
+                          select m).ToList();
             return movies;
         }
     }

@@ -109,7 +109,6 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Movi
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.RazorCoreGenerate.cache
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Home\Test.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -121,3 +120,7 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Movi
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.csproj.CopyComplete
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.genruntimeconfig.cache
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Movies\GetTopRevenueMovies.cshtml.g.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_MovieCard.cshtml.g.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Movies\Genre.cshtml.g.cs

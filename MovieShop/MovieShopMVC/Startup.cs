@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using ApplicationCore.ServiceInterfaces;
 using Infrastructure.Services;
 using Infrastructure.Data;
+using ApplicationCore.RepositoryInterfaces;
+using Infrastructure.Repositories;
+
 namespace MovieShopMVC
 {
     public class Startup
@@ -31,6 +34,7 @@ namespace MovieShopMVC
             // we used with 3rd party libraries, Autofax. Ninject
             services.AddControllersWithViews();
             services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddDbContext<MovieShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection")));
             //AddScoped
             //AddTransient

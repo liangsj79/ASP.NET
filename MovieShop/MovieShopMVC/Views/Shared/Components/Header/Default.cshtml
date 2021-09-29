@@ -1,0 +1,45 @@
+﻿@model List<ApplicationCore.Entities.Genre>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 ">
+        <div class="container-fluid">
+            <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">Movie Shop <i class="fas fa-film"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1  mr-auto">
+                    <li class="nav-item">
+                        <div class="nav-itme dropdown">
+                            <button class="btn btn-dark dropdown-toggle text-muted" type="button" id="genres" data-toggle="dropdown">
+                                GENRES
+                            </button>
+                            <div class="dropdown-menu">
+                                @foreach (var genre in Model)
+                                {
+                                    <a class="dropdown-item" asp-controller="Movies" asp-action="Genre" asp-route-id="@genre.Id">@genre.Name</a>
+                                }
+
+                                @*<a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">hi</a>*@
+
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-dark border rounded-1">
+                            Login
+                        </button>
+                        <button class="btn btn-dark border rounded-1">
+                            Register
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
