@@ -5,83 +5,59 @@ using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.Entities;
 using Infrastructure.Data;
 using ApplicationCore.Models;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class MovieRepository : IMovieRepository
+    public class MovieRepository : EfRepository<Movie>, IMovieRepository
     {
-        private readonly MovieShopDbContext _movieShopDbContext;
-
-        public MovieRepository(MovieShopDbContext dbContext)
+        
+        
+        public MovieRepository(MovieShopDbContext dbContext) : base(dbContext)
         {
-            _movieShopDbContext = dbContext;
         }
-        public IEnumerable<Movie> Get30HighestGrossingMovies()
+        public async Task<IEnumerable<Movie>> Get30HighestGrossingMovies()
         {
-            var movies = _movieShopDbContext.Movies.OrderByDescending(m => m.Revenue).Take(30).ToList();
+            var movies = await _dbContext.Movies.OrderByDescending(m => m.Revenue).Take(30).ToListAsync();
             return movies;
         }
 
-        public IEnumerable<Genre> GetAllGenres()
+
+        public async Task<IEnumerable<Movie>> GetMoviesWithReviews()
         {
-            var genres = _movieShopDbContext.Genres.OrderBy(g => g.Name).ToList();
-            return genres;
+            var movies = await _dbContext.Movies.Include(m => m.Reviews).ToListAsync();
+            return movies;
+
+
         }
+        public override async Task<Movie> GetByIdAsync(int id)
+        {
+            var moviedetails = await _dbContext.Movies.Include(m => m.Genres).ThenInclude(mg => mg.Genre)
+                .Include(m => m.Casts).ThenInclude(mc => mc.Cast)
+                .Include(m => m.Reviews)
+               .Include(m => m.Trailers).FirstOrDefaultAsync(m => m.Id == id);
+            if (moviedetails == null) throw new Exception($"No Movie Found for this {id}");
+            return moviedetails;
+        }
+
+
+
 
         
 
-        public Movie GetMovieById(int id)
-        {
-            var movie = _movieShopDbContext.Movies.Where(m => m.Id == id).SingleOrDefault();
-            return movie;
-        }
-        
-        
-        public decimal GetRatingByMovieId(int id)
-        {
-            decimal rating = 0.0m;
-            var reviews = _movieShopDbContext.Reviews.Where(r => r.MovieId == id).ToList();
-            if (reviews.Count() != 0)
-            {
-                rating = reviews.Average(r => r.Rating);
-            }
 
-            return rating;
-        }
-        public IEnumerable<CastResponseModel> GetCastsById(int id)
+        public async Task<IEnumerable<Movie>> GetMoviesByGenreId(int id)
         {
-            var casts = (from c in _movieShopDbContext.Casts
-                        join mc in _movieShopDbContext.MovieCasts
-                        on c.Id equals mc.CastId
-                        where mc.MovieId == id
-                        select new CastResponseModel{ Id= c.Id, Name=c.Name, ProfilePath =c.ProfilePath, Character =mc.Character }).ToList();
-            return casts;
-
-        }
-
-        public IEnumerable<Genre> GetGenresById(int id)
-        {
-            var genres = (from g in _movieShopDbContext.Genres
-                        join mg in _movieShopDbContext.MovieGenres
-                        on g.Id equals mg.GenreId
-                        where mg.MovieId == id
-                        select g).ToList();
-            return genres;
-        }
-        public IEnumerable<Trailer> GetTrailersById(int id)
-        {
-            var trailers = _movieShopDbContext.Trailers.Where(t => t.MovieId == id).ToList();
-            return trailers;
-        }
-
-        public IEnumerable<Movie> GetMoviesByGenreId(int id)
-        {
-            var movies = (from m in _movieShopDbContext.Movies
-                          join mg in _movieShopDbContext.MovieGenres
-                          on m.Id equals mg.MovieId
-                          where mg.GenreId == id
-                          select m).ToList();
+            var movies = await
+                (from m in _dbContext.Movies
+                 join mg in _dbContext.MovieGenres
+                 on m.Id equals mg.MovieId
+                 where mg.GenreId == id
+                 select m).ToListAsync();
             return movies;
         }
+
+
     }
 }

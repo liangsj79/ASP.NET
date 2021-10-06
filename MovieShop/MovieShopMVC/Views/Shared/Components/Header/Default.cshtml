@@ -1,4 +1,4 @@
-﻿@model List<ApplicationCore.Entities.Genre>
+﻿@model List<ApplicationCore.Models.GenreModel>
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 ">
@@ -21,7 +21,7 @@
                                     <a class="dropdown-item" asp-controller="Movies" asp-action="Genre" asp-route-id="@genre.Id">@genre.Name</a>
                                 }
 
-                                @*<a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">hi</a>*@
+                                
 
                             </div>
                         </div>
@@ -30,12 +30,12 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <button class="btn btn-dark border rounded-1">
+                        <a class="btn btn-dark border rounded-1" asp-controller="Account" asp-action="Login">
                             Login
-                        </button>
-                        <button class="btn btn-dark border rounded-1">
+                        </a>
+                        <a class="btn btn-dark border rounded-1" asp-controller="Account" asp-action="Register">
                             Register
-                        </button>
+                        </a>
                     </li>
 
                 </ul>

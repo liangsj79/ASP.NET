@@ -5,20 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using ApplicationCore.RepositoryInterfaces;
+using ApplicationCore.ServiceInterfaces;
 
 namespace MovieShopMVC.ViewComponents
 {
     public class HeaderViewComponent:ViewComponent
     {
-        private readonly IMovieRepository _movieRepository;
-        public HeaderViewComponent(IMovieRepository movieRepository)
+        private readonly IGenreService _genreService;
+        public HeaderViewComponent(IGenreService genreService)
         {
-            _movieRepository = movieRepository;
+            _genreService = genreService;
         }
         
-        public async Task<IViewComponentResult> InvokeAsync(int maxPriority, bool isDone)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var genres =  _movieRepository.GetAllGenres();
+            var genres = await _genreService.ListAllGenresAsync();
             return View(genres);
         }
 

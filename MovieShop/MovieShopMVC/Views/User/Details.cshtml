@@ -1,0 +1,13 @@
+﻿@model ApplicationCore.Models.UserDetailsResponseModel
+
+<div class="row justify-content-center" >
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.FullName</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@Model.Email</h6>
+            <p class="card-text">DOB: @(Model.DateOfBirth != null ? Model.DateOfBirth: "N/A") </p>
+            <p class="card-text">Phone Number: @(Model.PhoneNumber!= null? Model.PhoneNumber: "N/A") </p>
+            <p class="card-text">Two Factor: @(Model.TwoFactorEnabled != false ? "Enabled": "Disabled") </p>
+        </div>
+    </div>
+</div>

@@ -17,17 +17,17 @@ namespace MovieShopMVC.Controllers
             _movieService = movieService;
         }
 
-        public IActionResult Details(int id = 1)
+        public async Task<IActionResult> Details(int id = 1)
         {
 
-            var movie = _movieService.GetMovieDetailById(id);
+            var movie = await _movieService.GetMovieDetailById(id);
 
             return View(movie);
         }
 
-        public IActionResult Genre(int id =1 ,int page =1)
+        public async Task<IActionResult> Genre(int id =1 ,int page =1)
         {
-            var movies = _movieService.GetMoviesByGenreId(id);
+            var movies = await _movieService.GetMoviesByGenreId(id);
             var moviesView = new MovieViewModel
             {
                 MoviePerPage = 30,
@@ -38,12 +38,11 @@ namespace MovieShopMVC.Controllers
             return View(moviesView);
         }
 
-       /* public IActionResult GetTopRevenueMovies()
+        public async Task<IActionResult> TopRated()
         {
-            *//*var movieService = new MovieService();*//*
-            var movies = _movieService.Get30HighestGrossingMovies();
+            var movies = await _movieService.GetTopRatedMovies();
             return View(movies);
         }
-        // Partial views so that */
+   
     }
 }

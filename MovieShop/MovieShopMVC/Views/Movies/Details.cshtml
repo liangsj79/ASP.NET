@@ -1,9 +1,9 @@
-﻿@model ApplicationCore.Models.MovieDetailModel
+﻿@model ApplicationCore.Models.MovieDetailsResponseModel
 
 <div class="container-fluid">
     
     <div class="card" >
-        <div class="container-fluid bg-dark" style="height: 600px;overflow: hidden; ">
+        <div class="container-fluid bg-dark" style="max-height: 600px;overflow: hidden; ">
             <img src="@Model.BackdropUrl" class="img-fluid" alt="@Model.Title" />
         </div>
         
@@ -26,7 +26,7 @@
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-secondary font-weight-bold">@Model.RunTime.ToString() m | @Model.ReleaseYear</p>
+                                <p class="text-secondary font-weight-bold">@Model.RunTime.ToString() m | @Model.ReleaseDate.GetValueOrDefault().Year</p>
                             </div>
                             <div class="col-8">
                                 @if (@Model.Genres != null)
@@ -44,9 +44,9 @@
                         </div>
                         <div class="row py-2">
                             <div class="col">
-                                @if (@Model.Rating != null)
+                                @if (@Model.Rating != 0.0m)
                                 {
-                                    <h5><span class="badge bg-success text-light">@Model.Rating</span></h5>
+                                    <h5><span class="badge bg-success text-light">@Math.Round(Model.Rating.GetValueOrDefault(), 1)</span></h5>
                                 }
                                 else
                                 {
@@ -80,13 +80,16 @@
             <div id="movieFacts">
                 <h6>MOVIE FACTS</h6>
                 <ul class="list-group list-group-flush mb-2">
-                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-calendar-alt"></i> Release Date <span class="badge badge-pill bg-dark text-light">@Model.ReleaseDate</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-calendar-alt"></i> Release Date <span class="badge badge-pill bg-dark text-light">@Model.ReleaseDate.GetValueOrDefault().ToString("MMM dd, yyyy")</span></li>
                     <li class="list-group-item" style="background-color:inherit"><i class="fas fa-hourglass-half"></i> Run Time <span class="badge badge-pill bg-dark text-light">@Model.RunTime m</span></li>
-                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-money-bill-alt"></i> Box Office <span class="badge badge-pill bg-dark text-light">$@Model.Revenue</span></li>
-                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-dollar-sign"></i> Budget <span class="badge badge-pill bg-dark text-light">$@Model.Budget</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-money-bill-alt"></i> Box Office <span class="badge badge-pill bg-dark text-light">$@Math.Round(Model.Revenue.GetValueOrDefault(), 2).ToString("N")</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-dollar-sign"></i> Budget <span class="badge badge-pill bg-dark text-light">$@Math.Round(Model.Budget.GetValueOrDefault(), 2).ToString("N")</span></li>
+                    <li class="list-group-item" style="background-color:inherit">
+                        <a href="@Model.ImdbUrl" style="color:inherit;"><i class="fab fa-imdb"></i></a>&nbsp;
+                        <a href="#" style="color:inherit;"><i class="fas fa-share-square"></i></a>
+                    </li>
                 </ul>
-                <span style="margin-left:20px;"><a href="@Model.ImdbUrl" style="color:inherit;"><i class="fab fa-imdb"></i></a></span>
-                <span style="margin-left:20px;" ><a href="#" style="color:inherit;"><i class="fas fa-share-square"></i></a></span>
+                
             </div>
             <div id="trailers" class="pt-3">
                 <h6>TRAILERS</h6>

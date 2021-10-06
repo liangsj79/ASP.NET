@@ -172,7 +172,8 @@ namespace Infrastructure.Data
             builder.HasKey(m => m.Id);
             builder.Property(m => m.Title).HasMaxLength(256);
             builder.Property(m => m.Overview).HasMaxLength(4096);
-            builder.Property(m => m.Tagline).HasMaxLength(512);              builder.Property(m => m.ImdbUrl).HasMaxLength(2084);
+            builder.Property(m => m.Tagline).HasMaxLength(512);              
+            builder.Property(m => m.ImdbUrl).HasMaxLength(2084);
             builder.Property(m => m.TmdbUrl).HasMaxLength(2084);
             builder.Property(m => m.PosterUrl).HasMaxLength(2084);
             builder.Property(m => m.BackdropUrl).HasMaxLength(2084);
