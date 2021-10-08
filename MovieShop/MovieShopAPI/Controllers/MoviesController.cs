@@ -64,6 +64,16 @@ namespace MovieShopAPI.Controllers
             return Ok(movies);
         }
 
-       
+        [Route("{id}")]
+        [HttpGet]
+        public async Task<IActionResult> GetMovieDetails(int id)
+        {
+            var movie = await _movieService.GetMovieDetailById(id);
+
+            return Ok(movie);
+        }
+
+
+
     }
 }

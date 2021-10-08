@@ -15,7 +15,8 @@ import { TopratedComponent } from './movies/toprated/toprated.component';
 import { CreateMovieComponent } from './admin/create-movie/create-movie.component';
 import { CreateCastComponent } from './admin/create-cast/create-cast.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MovieCardComponent } from './shared/component/movie-card/movie-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +31,13 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     TopratedComponent,
     CreateMovieComponent,
     CreateCastComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MovieCardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
