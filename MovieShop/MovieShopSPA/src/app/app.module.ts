@@ -17,6 +17,7 @@ import { CreateCastComponent } from './admin/create-cast/create-cast.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieCardComponent } from './shared/component/movie-card/movie-card.component';
+import { ReviewsComponent } from './user/reviews/reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { MovieCardComponent } from './shared/component/movie-card/movie-card.com
     CreateCastComponent,
     MovieDetailsComponent,
     MovieCardComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

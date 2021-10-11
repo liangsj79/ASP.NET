@@ -24,7 +24,7 @@
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <p class="text-secondary font-weight-bold">{{movieDetails.runTime.toString()}} m | {{movieDetails.releaseDate | date: 'yyyy'}}</p>
+                                <p class="text-secondary font-weight-bold">{{movieDetails.runTime | number }} m | {{movieDetails.releaseDate | date: 'yyyy'}}</p>
                             </div>
                             <div class="col-8">
                                 <ng-container *ngIf="movieDetails.genres != null; else elseBlock">
@@ -40,7 +40,7 @@
                         <div class="row py-2">
                             <div class="col">
                                 <ng-container *ngIf="movieDetails.rating != 0; else noRating">
-                                    <h5><span class="badge bg-success text-light">{{movieDetails.rating.toFixed(1)}}</span></h5>
+                                    <h5><span class="badge bg-success text-light">{{movieDetails.rating | number:"1.1-1"}}</span></h5>
                                 </ng-container>
                                 <ng-template #noRating>
                                     <h5><span class="badge bg-success text-light">No Rating</span></h5>
@@ -60,7 +60,7 @@
                         <button type="button" class="btn btn-outline-light btn-block"><i class="far fa-edit"></i> Review</button>
                     </div>
                     <div class="row justify-content-end mt-4 mr-4 pl-5">
-                        <button type="button" class="btn btn-light float-right btn-block">BUY ${{movieDetails.price}}</button>
+                        <button type="button" class="btn btn-light float-right btn-block">BUY {{movieDetails.price | currency}}</button>
                     </div>
                     
                 </div>
@@ -75,8 +75,8 @@
                 <ul class="list-group list-group-flush mb-2">
                     <li class="list-group-item" style="background-color:inherit"><i class="far fa-calendar-alt"></i> Release Date <span class="badge badge-pill bg-dark text-light">{{movieDetails.releaseDate | date: 'MMM dd, yyyy'}}</span></li>
                     <li class="list-group-item" style="background-color:inherit"><i class="fas fa-hourglass-half"></i> Run Time <span class="badge badge-pill bg-dark text-light"> {{movieDetails.runTime}} m</span></li>
-                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-money-bill-alt"></i> Box Office <span class="badge badge-pill bg-dark text-light">${{movieDetails.revenue.toLocaleString("en-US", {minimumFractionDigits: 2})}}</span></li>
-                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-dollar-sign"></i> Budget <span class="badge badge-pill bg-dark text-light">${{movieDetails.budget.toLocaleString("en-US", {minimumFractionDigits: 2})}}</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="far fa-money-bill-alt"></i> Box Office <span class="badge badge-pill bg-dark text-light">{{movieDetails.revenue | currency}}</span></li>
+                    <li class="list-group-item" style="background-color:inherit"><i class="fas fa-dollar-sign"></i> Budget <span class="badge badge-pill bg-dark text-light">{{movieDetails.budget | currency}}</span></li>
                     <li class="list-group-item" style="background-color:inherit">
                         <a href="{{movieDetails.imdbUrl}}" style="color:inherit;"><i class="fab fa-imdb"></i></a>&nbsp;
                         <a href="#" style="color:inherit;"><i class="fas fa-share-square"></i></a>
