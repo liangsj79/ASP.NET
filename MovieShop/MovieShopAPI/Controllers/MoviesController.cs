@@ -32,6 +32,27 @@ namespace MovieShopAPI.Controllers
             return Ok(movies);
         }
 
+        [Route("{id}")]
+        [HttpGet]
+        public async Task<IActionResult> GetMovieDetails(int id)
+        {
+            var movie = await _movieService.GetMovieDetailsById(id);
+
+            return Ok(movie);
+        }
+
+
+        [Route("toprated")]
+        [HttpGet]
+        public async Task<IActionResult> GetTopRatedMovies()
+        {
+            var movies = await _movieService.GetTopRatedMovies();
+            if (!movies.Any())
+            {
+                return NotFound("No movies Found");
+            }
+            return Ok(movies);
+        }
 
         // api/movies/toprevenue
         [Route("toprevenue")]
@@ -52,28 +73,27 @@ namespace MovieShopAPI.Controllers
             // along with data you aslo need to return HTTP status code
         }
 
-        [Route("toprated")]
+        [Route("genre/{genreId}")]
         [HttpGet]
-        public async Task<IActionResult> GetTopRatedMovies()
+
+        public async Task<IActionResult> GetMoviesByGenreId(int genreId)
         {
-            var movies = await _movieService.GetTopRatedMovies();
-            if (!movies.Any())
+            var reviews = await _movieService.GetMoviesByGenreId(genreId);
+            return Ok(reviews);
+        }
+
+        
+        [Route("{id}/reviews")]
+        [HttpGet]
+        public async Task<IActionResult> GetMovieReviews(int id)
+        {
+            var reviews = await _movieService.GetReviewsByMovieId(id);
+            if (!reviews.Any())
             {
-                return NotFound("No movies Found");
+                return NotFound("No reviews Found");
             }
-            return Ok(movies);
+            return Ok(reviews);
         }
-
-        [Route("{id}")]
-        [HttpGet]
-        public async Task<IActionResult> GetMovieDetails(int id)
-        {
-            var movie = await _movieService.GetMovieDetailById(id);
-
-            return Ok(movie);
-        }
-
-
 
     }
 }

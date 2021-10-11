@@ -14,12 +14,35 @@ namespace ApplicationCore.ServiceInterfaces
         Task<UserLoginResponseModel> ValidateUser(UserLoginRequestModel requestModel);
 
         Task<IEnumerable<MovieCardResponseModel>> GetPurchasedMoviesByUserId(int id);
-        Task<IEnumerable<MovieCardResponseModel>> GetFavoriteMoviesByUserId(int id);
+        
 
         Task<UserDetailsResponseModel> GetUserDetailsByEmail(string email);
+
+        Task<UserDetailsResponseModel> GetUserDetailsById(int id);
 
         Task<UserEditRequestModel> GetUserEditInformation(string email);
 
         Task<User> UpdateUserInformation(UserEditRequestModel requestmodel);
+
+
+
+        Task<bool> AddPurchase(PurchaseRequestModel purchaseRequest, int userId);
+        Task<bool> IsMoviePurchased(PurchaseRequestModel purchaseRequest, int userId);
+        Task AddFavorite(FavoriteRequestModel favoriteRequest);
+
+        Task<bool> FavoriteExists(int id, int movieId);
+
+        Task RemoveFavorite(FavoriteRequestModel favoriteRequest);
+
+        Task<IEnumerable<MovieCardResponseModel>> GetFavoriteMoviesByUserId(int id);
+
+
+        Task AddMovieReview(ReviewRequestModel reviewRequest);
+        Task UpdateMovieReview(ReviewRequestModel reviewRequest);
+
+        Task DeleteMovieReview(int userId, int movieId);
+
+        Task<IEnumerable<ReviewResponseModel>> GetReviewsByUserId(int id);
+
     }
 }

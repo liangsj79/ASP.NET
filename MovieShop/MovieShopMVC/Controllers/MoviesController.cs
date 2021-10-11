@@ -20,7 +20,7 @@ namespace MovieShopMVC.Controllers
         public async Task<IActionResult> Details(int id = 1)
         {
 
-            var movie = await _movieService.GetMovieDetailById(id);
+            var movie = await _movieService.GetMovieDetailsById(id);
 
             return View(movie);
         }

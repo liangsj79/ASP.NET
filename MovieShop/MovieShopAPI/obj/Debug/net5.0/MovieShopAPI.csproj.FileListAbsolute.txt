@@ -22,7 +22,6 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Micr
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -63,3 +62,4 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\Movi
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\ref\MovieShopAPI.dll
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.pdb
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.genruntimeconfig.cache
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
