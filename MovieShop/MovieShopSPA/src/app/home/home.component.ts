@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
       .subscribe(
         m => {
           this.movieCards = m;
-          console.log(m);
           console.log('inside home component init method');
         }
       )

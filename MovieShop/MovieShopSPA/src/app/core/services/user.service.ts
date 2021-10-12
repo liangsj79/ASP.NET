@@ -1,37 +1,46 @@
-import { Injectable } from '@angular/core';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY} from 'rxjs';
 import { MovieCard} from 'src/app/shared/models/movieCard';
 import {environment} from 'src/environments/environment';
 import { Movie } from 'src/app/shared/models/movie';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
-  
-  
+  constructor(private http:HttpClient, private authService: AuthenticationService, private router: Router) { }
+  private jwtHelper = new JwtHelperService();
+  isLoggedIn: boolean = false;
+
   GetUserPurchases(): Observable<MovieCard[]> {
+    var token = localStorage.getItem('token');
     var reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0OTgyMSIsImVtYWlsIjoiYW50cmFAYW50cmEuY29tIiwiZ2l2ZW5fbmFtZSI6ImEiLCJmYW1pbHlfbmFtZSI6ImIiLCJuYmYiOjE2MzM3MDkxNjQsImV4cCI6MTYzMzk2ODM2NCwiaWF0IjoxNjMzNzA5MTY0LCJpc3MiOiJNb3ZpZSBTaG9wLCBJbmMiLCJhdWQiOiJNb3ZpZSBTaG9wIEN1c3RvbWVycyJ9.45gUYWJ451X0Is92MRDigd0M1xER_m_XkqHgLGuI_Pw'
+      'Authorization': 'Bearer ' + token
     });
     return this.http.get<MovieCard[]>(`${environment.apiUrl}User/purchases`, { headers: reqHeader });
   }
 
   GetUserFavorites(): Observable<MovieCard[]> {
+    
+    var token = localStorage.getItem('token');
+  
     var reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0OTgyMSIsImVtYWlsIjoiYW50cmFAYW50cmEuY29tIiwiZ2l2ZW5fbmFtZSI6ImEiLCJmYW1pbHlfbmFtZSI6ImIiLCJuYmYiOjE2MzM3MDkxNjQsImV4cCI6MTYzMzk2ODM2NCwiaWF0IjoxNjMzNzA5MTY0LCJpc3MiOiJNb3ZpZSBTaG9wLCBJbmMiLCJhdWQiOiJNb3ZpZSBTaG9wIEN1c3RvbWVycyJ9.45gUYWJ451X0Is92MRDigd0M1xER_m_XkqHgLGuI_Pw'
+      'Authorization': 'Bearer ' +  token
     });
-    return this.http.get<MovieCard[]>(`${environment.apiUrl}User/favorites`, { headers: reqHeader });
+    return this.http.get<MovieCard[]>(`${environment.apiUrl}User/favorites`, { headers: reqHeader }); 
   }
 
   GetUserReviews(): Observable<MovieCard[]> {
+    var token = localStorage.getItem('token');
     var reqHeader = new HttpHeaders({ 
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI0OTgyMSIsImVtYWlsIjoiYW50cmFAYW50cmEuY29tIiwiZ2l2ZW5fbmFtZSI6ImEiLCJmYW1pbHlfbmFtZSI6ImIiLCJuYmYiOjE2MzM3MDkxNjQsImV4cCI6MTYzMzk2ODM2NCwiaWF0IjoxNjMzNzA5MTY0LCJpc3MiOiJNb3ZpZSBTaG9wLCBJbmMiLCJhdWQiOiJNb3ZpZSBTaG9wIEN1c3RvbWVycyJ9.45gUYWJ451X0Is92MRDigd0M1xER_m_XkqHgLGuI_Pw'
+      'Authorization': 'Bearer ' +  token
     });
     return this.http.get<MovieCard[]>(`${environment.apiUrl}User/reviews`, { headers: reqHeader });
   }

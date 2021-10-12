@@ -1,1 +1,26 @@
-<p>login works!</p>
+<!--Use Template-Driven approach-->
+<!--ngModel directive is the one we use that uses FormConrol behind the scenes-->
+<!--Template driven approach will require each html control to have name attribute-->
+<!--ngMdeol uses banana in the box syntax-->
+<!--Before using Template-driven or Reactive form, import those two modules in AppModules-->
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h4>Login</h4>
+        <hr/>
+        <form (ngSubmit)="loginSubmit(loginForm)" #loginForm="ngForm">
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input  class="form-control" name="email" [(ngModel)]="userLogin.email"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input class="form-control" name="password" [(ngModel)]="userLogin.password" />
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

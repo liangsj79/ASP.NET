@@ -1,4 +1,4 @@
-import { RegisterRequestModel } from './../../shared/models/RegisterRequestModel';
+import { Register } from '../../shared/models/register';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   constructor(private authenticationServive: AuthenticationService) { }
 
   ngOnInit(): void {
-    var requestModel: RegisterRequestModel ;
+    var requestModel: Register;
   }
   onSubmit(){
     

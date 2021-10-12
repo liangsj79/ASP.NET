@@ -1,28 +1,50 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Action 1</a>
-                    <a class="dropdown-item" href="#">Action 2</a>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 ">
+        <div class="container-fluid">
+            <a class="navbar-brand " [routerLink]="[ '/']">Movie Shop <i class="fas fa-film"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" *ngIf="isLoggedIn">
+                <ul class="navbar-nav flex-grow-1  mr-auto">
+                    <li class="nav-item">
+                        <div class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle text-muted" type="button" id="genres" data-toggle="dropdown">
+                                GENRES
+                            </button>
+                            
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="navbar-collapse ">
+                    <ul class="navbar-nav ml-auto">
+            
+                        <li class="nav-item dropdown text-capitalize">
+                            <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">
+                                {{user.family_name +' ' + user.given_name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" [routerLink]="[ '/user/purchases']"> Purchased Movies </a>
+                                <a class="dropdown-item" [routerLink]="[ '/user/favorites']"> Favorite Movies </a>
+                                <a class="dropdown-item" [routerLink]="[ '/user/purchases']"> User Account </a>
+                                <a class="dropdown-item" (click)="logout()"> Logout </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+            </div>
+            <div class="navbar-collapse collapse w-100" *ngIf="!isLoggedIn">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item pr-4">
+                        <a class="btn btn-outline-primary" [routerLink]="[ '/account/login']"> Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary"[routerLink]="[ '/account/register']" > Register </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
