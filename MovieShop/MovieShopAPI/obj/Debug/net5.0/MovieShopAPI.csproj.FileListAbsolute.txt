@@ -63,3 +63,5 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\ref\
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.pdb
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.genruntimeconfig.cache
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Serilog.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopAPI\bin\Debug\net5.0\Serilog.Sinks.Console.dll

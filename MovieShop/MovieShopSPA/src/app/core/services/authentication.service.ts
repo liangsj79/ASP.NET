@@ -53,24 +53,14 @@ export class AuthenticationService {
 
     if (token && !this.jwtHelper.isTokenExpired(token)){
       const decodedToken =this.jwtHelper.decodeToken(token);
-
+      console.log('inside populate');
+      console.log(decodedToken);
       // set current user data into Observable
       this.currentUserSubject.next(decodedToken);
       this.isLoggedInSubject.next(true);
     }
   }
-  checkIsLoggedIn() {
-    
-    var token = localStorage.getItem('token');
-    if (token && !this.jwtHelper.isTokenExpired(token)){
-      const decodedToken =this.jwtHelper.decodeToken(token);
-
-      // set current user data into Observable
-      this.currentUserSubject.next(decodedToken);
-      this.isLoggedInSubject.next(true);
-      
-    }
-  }
+ 
 
 
   logout(){

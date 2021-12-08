@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApplicationCore.Models;
 using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
+using Serilog;
 namespace Infrastructure.Services
 {
     public class MovieService : IMovieService
@@ -13,6 +14,7 @@ namespace Infrastructure.Services
         private readonly IMovieRepository _movieRepository;
         private readonly IReviewRepository _reviewRepository;
         private readonly IMovieGenreRepository _movieGenreRepository;
+
         public MovieService(IMovieRepository movieRepository, IReviewRepository reviewRepository, IMovieGenreRepository movieGenreRepository)
         {
             _movieRepository = movieRepository;
@@ -32,8 +34,11 @@ namespace Infrastructure.Services
             {
                 moviesCardResponseModel.Add(new MovieCardResponseModel { Id = movie.Id, PosterUrl = movie.PosterUrl });
             }
+            Log.Logger =  new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
+            Log.Information("retrieve data！");
             return moviesCardResponseModel;
+            
         }
 
    

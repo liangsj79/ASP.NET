@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HZo2MJB1wqgWFyssMCBB5rdOCOLfWTXgbAtcNIjq2fpJsq6iX7sEJc0e1YYlpOHhwzmS6RuOTtfpiE+Ph8HWxQ==",
+  "dgSpecHash": "9wUu9FWG25HqQNQu518imLscNuEuUMVg4a2FjEHtk5vY38ihwmimUUSEXrlf6BwciejLeJNrwVgyw98gj7hewA==",
   "success": true,
   "projectFilePath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,8 @@
     "C:\\Users\\W\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog.sinks.console\\4.0.0\\serilog.sinks.console.4.0.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

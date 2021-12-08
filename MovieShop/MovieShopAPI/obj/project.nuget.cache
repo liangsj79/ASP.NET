@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wkWVo2N7XmVaxEz+SpFeePU0aWXZJuI+FBF1PvOq7+BDiQtt6UfO4T3Mp+9hgmab6w31prtEn9FUbMIUQMYL7g==",
+  "dgSpecHash": "Ph/AUZI5t/8VUPKnMjbkcq0eSq43HJNFLG7O/TS4ueqkr9WeGBHk4peg6F2ZHFL99GhWjnJCLbMuL2sbUY6lAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,8 @@
     "C:\\Users\\W\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog.sinks.console\\4.0.0\\serilog.sinks.console.4.0.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

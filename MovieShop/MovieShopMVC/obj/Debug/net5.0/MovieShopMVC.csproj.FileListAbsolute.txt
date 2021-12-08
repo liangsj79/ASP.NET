@@ -209,3 +209,5 @@ C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razo
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_PurchaseDetailsCard.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
 C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Movies\TopRated.cshtml.g.cs
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.dll
+C:\Users\W\Documents\GitHub\ASP.NET\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Sinks.Console.dll

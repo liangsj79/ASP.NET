@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "va7sTQCuf/mN+nYsJUNhOAwl9W1fLFxFgghsenMsvkke3BXfutPWOWAkErGzu71UetCIqt9zlCpFGhm0PSfopg==",
+  "dgSpecHash": "Z3BROJvEZ6KAccI9UiWxVY7bQjm64DhW35aC+/HwWaFqC7ZNZsE6KSKZrVC0BVtjIQq9499eSjqkP1kgpd4pAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\W\\Documents\\GitHub\\ASP.NET\\MovieShop\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,8 @@
     "C:\\Users\\W\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\W\\.nuget\\packages\\serilog.sinks.console\\4.0.0\\serilog.sinks.console.4.0.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\W\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

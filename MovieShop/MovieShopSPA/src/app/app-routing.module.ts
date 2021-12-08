@@ -1,4 +1,4 @@
-import { ReviewsComponent } from './user/reviews/reviews.component';
+import { AuthGuard } from './core/guards/auth.guard';
 import { FavoritesComponent } from './user/favorites/favorites.component';
 import { PurchasesComponent } from './user/purchases/purchases.component';
 import { NgModule } from '@angular/core';
@@ -11,12 +11,10 @@ import { MovieDetailsResolver  } from './movies/movie-details//movie-details-res
 
 const routes: Routes = [
   {path:"", component: HomeComponent},
+  {path:"user", loadChildren: () => import('./user/user.module').then(mod => mod.UserModule), canLoad: [AuthGuard]},
   {path:"account/login",component: LoginComponent},
   {path:"account/register", component:RegisterComponent},
   {path:"movies/:id", component:MovieDetailsComponent, resolve:{movieDetails: MovieDetailsResolver}},
-  {path:"user/purchases", component:PurchasesComponent},
-  {path:"user/favorites", component:FavoritesComponent},
-  {path:"user/reviews",component:ReviewsComponent}
 
 ];
 

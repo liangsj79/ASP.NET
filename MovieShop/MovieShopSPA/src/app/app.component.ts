@@ -1,3 +1,4 @@
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Movie Shop Angular App';
+
+  constructor(private authService: AuthenticationService){}
+
+ ngOnInit():void{
+    this.authService.populateUserInfo();
+  }
 }

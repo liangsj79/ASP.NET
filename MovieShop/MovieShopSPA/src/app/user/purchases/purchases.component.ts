@@ -10,20 +10,18 @@ import { MovieCard } from 'src/app/shared/models/movieCard';
 })
 export class PurchasesComponent implements OnInit {
   movieCards!: MovieCard[];
-  isLoggedIn: boolean = false;
-  constructor(private userService: UserService, private authService:AuthenticationService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.authService.isLoggedIn.subscribe(resp => this.isLoggedIn = resp);
-    this.authService.checkIsLoggedIn();
-    if(this.isLoggedIn){
-      this.userService.GetUserPurchases()
-      .subscribe(
-        m => {
-          this.movieCards = m;
-        }
-      )
-    }
+
+
+    this.userService.GetUserPurchases()
+    .subscribe(
+      m => {
+        this.movieCards = m;
+      }
+    )
+    
     
   }
 
